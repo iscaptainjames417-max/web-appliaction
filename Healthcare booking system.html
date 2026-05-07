@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Care - Patient Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('mental-health-bg.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            color: rgb(33, 148, 81);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        .hero .cta {
+            margin-top: 20px;
+        }
+
+        .cta a {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .cta a:hover {
+            background-color: #45a049;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .services h2 {
+            margin-bottom: 40px;
+        }
+
+        .services .service-item {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            transition: box-shadow 0.3s;
+        }
+
+        .services .service-item:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .services .service-item h3 {
+            margin-top: 0;
+        }
+
+        /* Dashboard Section */
+        .dashboard {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .dashboard h2 {
+            margin-bottom: 40px;
+        }
+
+        .dashboard .profile-card {
+            display: inline-block;
+            width: 80%;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        /* Appointment Section */
+        .appointment {
+            padding: 50px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .appointment h2 {
+            margin-bottom: 40px;
+        }
+
+        .appointment form {
+            display: inline-block;
+            text-align: left;
+            width: 400px; /* Fixed width for forms */
+        }
+
+        .appointment label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .appointment input,
+        .appointment select,
+        .appointment textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .appointment input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .appointment input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .contact form {
+            display: inline-block;
+            text-align: left;
+            width: 400px; /* Fixed width for forms */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Mental Health Care System</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Your Journey to Mental Wellness</h1>
+        <p>Providing holistic, patient-centered care for mental health.</p>
+        <div class="cta">
+            <a href="#">Book an Appointment</a>
+            <a href="#">Access Your Dashboard</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-item">
+            <h3>Psychotherapy</h3>
+            <p>Individual counseling for mental health and emotional wellness.</p>
+        </div>
+        <div class="service-item">
+            <h3>Psychiatry</h3>
+            <p>Expert psychiatric evaluations and medication management.</p>
+        </div>
+        <div class="service-item">
+            <h3>Group Therapy</h3>
+            <p>Therapeutic group sessions for support and skill-building.</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+        <h2>Your Dashboard</h2>
+        <div class="profile-card">
+            <h3>Welcome, <span id="patient-name">[Patient Name]</span></h3>
+            <p>Next Appointment: <span id="next-appointment">[Date and Time]</span></p>
+            <p>Medications: <span id="medications">[Medication List]</span></p>
+            <p>Emergency Contact: <span id="emergency-contact">[Contact Name]</span></p>
+            <button onclick="alert('Booking a new appointment...')">Book New Appointment</button>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Section -->
+    <section class="appointment">
+        <h2>Book an Appointment</h2>
+        <form id="appointment-form">
+            <label for="service">Select Service</label>
+            <select id="service">
+                <option value="Psychotherapy">Psychotherapy</option>
+                <option value="Psychiatry">Psychiatry</option>
+                <option value="Group Therapy">Group Therapy</option>
+            </select>
+
+            <label for="provider">Choose Provider</label>
+            <select id="provider">
+                <option value="Dr. Campbell">Dr. Campbell</option>
+                <option value="Dr. Ivan">Dr. Ivan</option>
+                <option value="Dr. Celia">Dr. Celia</option>
+            </select>
+
+            <label for="date">Select Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Select Time</label>
+            <input type="time" id="time" required>
+
+            <input type="submit" value="Book Appointment">
+        </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mental Health Care System | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a></p>
+    </footer>
+
+    <script>
+        // JavaScript for Appointment Booking Form
+        document.getElementById('appointment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            const service = document.getElementById('service').value;
+            const provider = document.getElementById('provider').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            alert(`Appointment booked!\nService: ${service}\nProvider: ${provider}\nDate: ${date}\nTime: ${time}`);
+        });
+
+        // JavaScript for Contact Form
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            alert(`Message sent!\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+        });
+    </script>
+</body>
+</html>
